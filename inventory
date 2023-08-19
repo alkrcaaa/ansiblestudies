@@ -1,7 +1,5 @@
-ansibleworker2@192.168.1.223 usd sshkey
+ali@192.168.1.199 ansible_machine
 
 
-ansibleworker1@192.168.1.228 used password
+ansibleworker2@192.168.1.228 
 
-
-git commit test.
