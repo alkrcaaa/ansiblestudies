@@ -1,0 +1,4 @@
+# ansible-playbook --ask-become-pass apache_install.yaml 
+    - become sudo yetkisi verme amacı ile kullanılıyor. 
+    - artık ansible.cfg dosyasında neleri kullanacağını söylediğimizden ssh bilgisine artık gerek yok.
+    

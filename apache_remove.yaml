@@ -1,0 +1,15 @@
+---
+
+  - hosts: all 
+    become: true
+    tasks:
+
+    - name: this task targets apache2 removing.
+      apt:
+        name: apache2 
+        state: absent # kaldırma işlemini burada yapıyoruz "absent" remove veya uninstall anlamına gelmez mevcut olmayan yani sende olmayan hali anlamına geliyor.
+
+    - name: this task targets Php removing.
+      apt:
+        name: libapache2-mod-php 
+        state: absent # kaldırma işlemini burada yapıyoruz "absent" remove veya uninstall anlamına gelmez mevcut olmayan yani sende olmayan hali anlamına geliyor.
