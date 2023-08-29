@@ -21,3 +21,5 @@
         name: libapache2-mod-php #ansible all -m apt -a name=libapache2-mod-php --become -K
         state: latest
       when: ansible_distribution == "Windows"
+
+      ali new machine test
