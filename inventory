@@ -1,3 +1,11 @@
-192.168.1.221 ansible_user=ansibleworker2
+[ubuntu_Server]
+172.16.27.132 
+172.16.27.133 
 
-192.168.1.199
+[database_server]
+172.16.27.134 
+
+[ftp_sunucusu]
+192.168.4.11
+
+

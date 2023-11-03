@@ -7,19 +7,24 @@
     - name: this task targets apt package index update
       apt :
         update_cache: yes
-      when: ansible_distribution == "Windows" # Bu uptade etme görevini factlerden getirdiğinde ubuntu bulursan sadece o sunucuda gerçekleştir. koşul bildirme durumu için "When" kullanıyoruz.
-
+      when: ansible_distribution == "Ubuntu" # Bu uptade etme görevini factlerden getirdiğinde ubuntu bulursan sadece o sunucuda gerçekleştir. koşul bildirme durumu için "When" kullanıyoruz.
 
     - name: this task targets apache2 installation.
       apt:
         name: apache2 # ansible all -m apt -a name=apache2 --become -K
         state: latest # version information
-      when: ansible_distribution == "Windows"
+      when: ansible_distribution == "Ubuntu"
 
     - name: this task targets Php installation.
       apt:
         name: libapache2-mod-php #ansible all -m apt -a name=libapache2-mod-php --become -K
         state: latest
-      when: ansible_distribution == "Windows"
+      when: ansible_distribution == "Ubuntu"
+
+    - name: this task targets docker installation.
+      apt:
+        name: docker.io
+        state: latest
+      when: ansible_distribution == "Ubuntu"
 
   

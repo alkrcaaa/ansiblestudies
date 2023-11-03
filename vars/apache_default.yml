@@ -1,0 +1,4 @@
+---
+ansible_user: ansibleworker1
+apache_server: apache2
+php_library: libapache2-mod-php

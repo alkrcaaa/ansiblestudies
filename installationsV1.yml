@@ -1,0 +1,24 @@
+---
+
+  - hosts: all 
+    become: true
+    tasks:
+
+    - name: this task targets apt package index update "Ubuntu Update index'ini günceller apache & Php yüklemesini yapar"
+      apt :
+        name: 
+          - apache2 
+          - libapache2-mod-php # yüklenecek paket adı
+        state: latest # version bilgisi
+        update_cache: yes
+      when: ansible_distribution == "Ubuntu" # Bu uptade etme görevini factlerden getirdiğinde ubuntu bulursan sadece o sunucuda gerçekleştir. koşul bildirme durumu için "When" kullanıyoruz.
+
+    - name: this task targets Ubuntu apache & php kütüphanesini kurar ve Update indexini günceller.
+      apt:
+        name: 
+          - httpd
+          - php
+        state: latest # version information
+        update_cache: yes
+      when: ansible_distribution == "Rocky"
+

@@ -1,0 +1,7 @@
+172.16.27.132 ansible_user=ansibleworker1  apache_server=apache2 php_libary=libapache2-mod-php 
+
+172.16.27.133 ansible_user=ansibleworker2 apache_server=apache2 php_libary=libapache2-mod-php 
+
+
+
+172.16.27.134 ansible_user=ali  apache_server=httpd php_libary=php
