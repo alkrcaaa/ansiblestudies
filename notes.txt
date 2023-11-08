@@ -2,10 +2,13 @@
     - become sudo yetkisi verme amacı ile kullanılıyor. 
     - artık ansible.cfg dosyasında neleri kullanacağını söylediğimizden ssh bilgisine artık gerek yok.
     
-# - bütün sunucuklar ubuntu.
+# - bütün sunucular ubuntu.
 
 # - ubuntu :
         -apache_server = apache2 php_libary = libapache2-mod-php #ubuntuda böyle geçiyor.
 
 # - Rocky :
         -apache_server = httpd php_libary = php
+
+
+# 

@@ -18,3 +18,4 @@
       ansible.builtin.package:
         name: docker 
         state: absent # kaldırma işlemini burada yapıyoruz "absent" remove veya uninstall anlamına gelmez mevcut olmayan yani sende olmayan hali anlamına geliyor.
+      when : ansible_distribution == "Ubuntu"

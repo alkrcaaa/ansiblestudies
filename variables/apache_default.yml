@@ -1,0 +1,5 @@
+---   
+apache_server : apache2 
+php_libary : libapache2-mod-php 
+db_server : mariadb-server
+ftp_srver : vsftp

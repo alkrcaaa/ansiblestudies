@@ -4,4 +4,4 @@
 
 
 
-172.16.27.134 ansible_user=ali  apache_server=httpd php_libary=php
+192.168.1.121 ansible_user=ali  apache_server=httpd php_libary=php

@@ -1,0 +1,35 @@
+---
+- hosts: all 
+  become: true
+  tasks:
+    - name: Ubuntu sunucularının Update & Upgrade işlemlerini gerçekleştir
+      ansible.builtin.package:
+        name:
+          - "{{ apache_server }}" 
+          - "{{ php_library }}"
+        state: latest
+        update_cache: yes
+      when: ansible_distribution == "Ubuntu"
+
+    - name: Rocky sunucularının Update & Upgrade işlemlerini gerçekleştir
+      ansible.builtin.package:
+        name:
+          - "{{ apache_server }}" 
+          - "{{ php_library }}"
+        state: latest
+        update_cache: yes
+      when: ansible_distribution == "Rocky"
+
+- hosts: pcp1
+  become: true
+  tasks:
+    - name: Bu task Test amaçlıdır sonuçlarını kontrol et
+      debug: var=ansible_os_family
+
+    - name: Dosyalardan değişkenleri oku
+      include_vars: "{{ lookup('first_found', params) }}"
+      vars:
+        params:
+          files:
+            - "variables/apache_{{ ansible_os_family }}"
+            - "variables/apache_default.yml"

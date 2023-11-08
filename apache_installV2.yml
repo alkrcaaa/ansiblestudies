@@ -1,0 +1,20 @@
+---
+
+  - hosts: all 
+    become: true
+    tasks:
+
+    - name: this task targets apt package index update (Bu görev , Ubuntu Apache & Php Kütüphane Yüklemesini yapar.ve Paket indexini günceller.)
+      ansible.builtin.package : # burada apt kulanınca hata veriyor çünkü bizim bütün sunucularımızda apt çalışmıyor.
+        name:
+          - "{{ apache_server }}" # bu değişkenin neye karşılık geldiğini inventoryde belirtmiştik. hangi sunucu olduğuna oradan bakıp neyi tanımladıysak o paket kurulumu gerçekleşiyor.
+          - "{{ php_libary }}"
+        state: latest
+        update_cache: yes
+
+
+# değişken ile yaptığımızdan koşuluda sildik. ve değişkeni inventoryde sunucu karşısında tanımladık. ama "ANSİBLE.BUİLTİN.PACKAGE" İle yapmak zorundaydık çünkü sunucuunun biri rocky
+# cash'i yine update ettik ve son  versiyon bilgisini state kısmında bildirdik.
+
+
+# ansible-playbook --ask-become-pass apache_installV1.yml  kullanmadan önce değişkeni inventory dosyasında belirttiğinden emin ol. 
